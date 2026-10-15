@@ -4,21 +4,24 @@ public class Veiculo {
     String modelo;
     int ano;
     String placa;
+    Categoria categoria;
 
     public Veiculo(){
 
     }
 
-    public Veiculo(String _modelo, int _ano, String _placa){
+    public Veiculo(String _modelo, int _ano, String _placa, Categoria cat){
         this.modelo = _modelo;
         this.ano = _ano;
         this.placa = _placa;
+        this.categoria = cat;
     }
 
     public void imprimir(){
         System.out.println("Modelo: " + this.modelo);
         System.out.println("Ano: " + this.ano);
         System.out.println("Placa: " + this.placa);
+        System.out.println("Categoria: " + categoria.nome );
     }
 
     public void cadastrar(){

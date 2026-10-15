@@ -10,6 +10,7 @@ public class Main {
         v.cadastrar();
         v.modelo = "Fiat " + v.modelo;
         v.ano += 1;
+        v.categoria = new Categoria("SUV");
         v.imprimir();
 
     }
