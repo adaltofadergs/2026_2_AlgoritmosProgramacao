@@ -21,9 +21,14 @@ public class Veiculo {
         System.out.println("Modelo: " + this.modelo);
         System.out.println("Ano: " + this.ano);
         System.out.println("Placa: " + this.placa);
-        System.out.println("Categoria: " + categoria.nome );
+        if( this.categoria != null ) {
+            System.out.println("Categoria: " + categoria.nome);
+        }
     }
 
+    /**
+     * Método para cadastrar novo Veículo
+    */
     public void cadastrar(){
         Scanner ler = new Scanner(System.in);
         System.out.print("Digite o modelo: ");
