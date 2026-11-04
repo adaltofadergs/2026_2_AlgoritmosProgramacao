@@ -9,4 +9,17 @@ public class Fisico extends Cliente{
         super(nome);
         this.cpf = cpf;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente Físico: \n" +
+                super.toString() + "\n" +
+                "CPF: " + cpf;
+
+    }
+
+    @Override
+    public void cadastrar() {
+
+    }
 }

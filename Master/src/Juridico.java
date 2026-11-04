@@ -5,9 +5,16 @@ public class Juridico extends Cliente{
         super();
     }
 
+    @Override
+    public void cadastrar() {
+
+    }
+
     public Juridico(String nome, String cnpj) {
         super(nome);
         this.cnpj = cnpj;
     }
+
+
 
 }
