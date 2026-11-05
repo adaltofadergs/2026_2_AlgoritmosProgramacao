@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Fisico extends Cliente{
     public String cpf;
 
@@ -20,6 +22,7 @@ public class Fisico extends Cliente{
 
     @Override
     public void cadastrar() {
-
+        this.nome =  JOptionPane.showInputDialog("Nome do Cliente Físico: ");
+        this.cpf = JOptionPane.showInputDialog("CPF: ");
     }
 }

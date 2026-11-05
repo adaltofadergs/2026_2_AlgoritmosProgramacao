@@ -15,16 +15,24 @@ public class Main {
         String txt = "Qual tipo de cliente: \n  1)Físico \n  2)Jurídico";
         int tipoCli = Integer.parseInt(  JOptionPane.showInputDialog(txt));
         Cliente client = null;
-        String nome = JOptionPane.showInputDialog("Nome do cliente: ");
-        if(tipoCli == 1){
-            String cpf = JOptionPane.showInputDialog("CPF: ");
-            client = new Fisico(nome, cpf);
-        }else {
-            String cnpj = JOptionPane.showInputDialog("CNPJ: ");
-            client = new Juridico(nome, cnpj);
-        }
 
-        Conta c1 = new Conta();
+        if(tipoCli == 1){
+            client = new Fisico();
+        }else {
+            client = new Juridico();
+        }
+        client.cadastrar();
+
+        txt = "Qual tipo de conta: \n  1)Poupança \n  2)Corrente";
+        int tipoConta = Integer.parseInt(  JOptionPane.showInputDialog(txt));
+
+        Conta c1 = null;
+        if( tipoConta == 1 )
+            c1 = new Poupanca();
+        else
+            c1 = new Corrente();
+
+
         c1.titular = client;
 
         int op = -1;

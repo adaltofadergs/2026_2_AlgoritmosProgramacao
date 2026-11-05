@@ -1,4 +1,4 @@
-public class Conta {
+public abstract class Conta {
 
     protected static final double TARIFA = 1.0;
 
