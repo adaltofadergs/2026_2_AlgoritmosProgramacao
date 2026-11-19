@@ -3,16 +3,23 @@ import javax.swing.*;
 public class Main {
 
     public static int menu(){
+
         String txt =  "1) Adicionar Produto \n"
                     + "2) Imprimir Lista \n"
                     + "3) Remover último \n"
+                    + "4) Buscar item pela posição \n"
                     + "0) Sair \n\n "
                     + "Digite sua opção: ";
-        String resposta = JOptionPane.showInputDialog(txt);
-        if( resposta.isEmpty() ){
+        try {
+            String resposta = JOptionPane.showInputDialog(txt);
+            if (resposta.isEmpty()) {
+                return -1;
+            }
+            return Integer.parseInt(resposta);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.toString());
             return -1;
         }
-        return Integer.parseInt( resposta );
     }
 
 
@@ -37,6 +44,12 @@ public class Main {
                     break;
                 case 3:
                     listProd.produtos.removeLast();
+                    break;
+                case 4:
+                    int position = Integer.parseInt( JOptionPane.showInputDialog("Qual posição?") );
+                    Produto p = listProd.getProdutoByPosicao( position );
+                    if (p != null )
+                        JOptionPane.showMessageDialog( null, p.toString() );
                     break;
                 case 0:
                     JOptionPane.showMessageDialog(null, "Bye-bye!");
