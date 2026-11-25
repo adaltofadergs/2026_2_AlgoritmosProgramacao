@@ -6,8 +6,9 @@ public class Main {
 
         String txt =  "1) Adicionar Produto \n"
                     + "2) Imprimir Lista \n"
-                    + "3) Remover último \n"
+                    + "3) Remover Último \n"
                     + "4) Buscar item pela posição \n"
+                    + "5) Retornar Tamanho da Lista \n"
                     + "0) Sair \n\n "
                     + "Digite sua opção: ";
         try {
