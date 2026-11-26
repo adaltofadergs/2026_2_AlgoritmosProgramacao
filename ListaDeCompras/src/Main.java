@@ -9,6 +9,7 @@ public class Main {
                     + "3) Remover Último \n"
                     + "4) Buscar item pela posição \n"
                     + "5) Retornar Tamanho da Lista \n"
+                    + "6) Limpar Lista \n"
                     + "0) Sair \n\n "
                     + "Digite sua opção: ";
         try {
@@ -44,7 +45,7 @@ public class Main {
                     listProd.imprimir();
                     break;
                 case 3:
-                    listProd.produtos.removeLast();
+                    listProd.products.removeLast();
                     break;
                 case 4:
                     int position = Integer.parseInt( JOptionPane.showInputDialog("Qual posição?") );
@@ -52,6 +53,15 @@ public class Main {
                     if (p != null )
                         JOptionPane.showMessageDialog( null, p.toString() );
                     break;
+                case 5:
+                    int tam = listProd.getTamanho();
+                    String txt = "A lista está vazia";
+                    if( tam == 1 ) txt = "A lista possui 1 produto";
+                    if( tam > 1 ) txt = "A lista possui " + tam + " produtos";
+                    JOptionPane.showMessageDialog(null, txt);
+                    break;
+                case 6:
+                    listProd.products.clear();
                 case 0:
                     JOptionPane.showMessageDialog(null, "Bye-bye!");
                     break;

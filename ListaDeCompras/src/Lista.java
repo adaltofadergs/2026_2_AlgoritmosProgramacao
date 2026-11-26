@@ -2,16 +2,16 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class Lista {
-    ArrayList<Produto> produtos;
+    ArrayList<Produto> products;
 
     public Lista(){
-        this.produtos = new ArrayList<Produto>();
+        this.products = new ArrayList<Produto>();
     }
 
     public boolean add( Produto prod ){
         if( prod != null ){
             if( !prod.nome.isEmpty()  && prod.quantidade >= 0){
-                this.produtos.add( prod );
+                this.products.add( prod );
                 return true;
             }
         }
@@ -20,7 +20,7 @@ public class Lista {
 
     public void imprimir(){
         String txt = "";
-        for( Produto prod : this.produtos){
+        for( Produto prod : this.products){
             // txt = txt.concat( prod.toString() + "\n");
             txt += prod + "\n";
         }
@@ -29,12 +29,16 @@ public class Lista {
 
     public Produto getProdutoByPosicao(int posicao){
         try {
-            return this.produtos.get( posicao );
+            return this.products.get( posicao );
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.toString());
             return null;
         }
 
+    }
+
+    public int getTamanho(){
+        return this.products.size();
     }
 
 
